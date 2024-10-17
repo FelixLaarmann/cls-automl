@@ -16,8 +16,6 @@ loguru = "^0.7"
 
 clsp = {git = "https://github.com/tudo-seal/clsp-python"}
 
-nas_benchmarks = {git = "https://github.com/automl/nas_benchmarks"}
-
 tensorflow-macos = {version = ">=2.16.2", optional = true}
 tensorflow-metal = {version = ">=0.7.0", optional = true}
 tensorflow = {version = ">=2.4.0", optional = true}
