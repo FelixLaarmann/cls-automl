@@ -8,15 +8,15 @@ import argparse
 import torch 
 import torch.nn as nn 
 
-import numeric_optics.para
+import esop.numeric_optics.para
 
 from itertools import product, groupby
 
-import numeric_optics.lens as lens
-from numeric_optics.para import Para, to_para, linear, to_para_init
-from numeric_optics.supervised import supervised_step, mse_loss, learning_rate, rda_learning_rate
-from numeric_optics.update import gd, rda, rda_momentum, momentum
-from numeric_optics.initialize import normal, glorot_normal, glorot_uniform
+import esop.numeric_optics.lens as lens
+from esop.numeric_optics.para import Para, to_para, linear, to_para_init
+from esop.numeric_optics.supervised import supervised_step, mse_loss, learning_rate, rda_learning_rate
+from esop.numeric_optics.update import gd, rda, rda_momentum, momentum
+from esop.numeric_optics.initialize import normal, glorot_normal, glorot_uniform
 
 from typing import Any
 from clsp import (
@@ -174,8 +174,8 @@ class Linear_Repository:
             "Weights_Initial_Normal": normal(0, 0.01),
             "Weights_Initial_GlotrotUniform": glorot_uniform,
             "Weights_Initial_Glotrot": glorot_normal,
-            "Bias_True": numeric_optics.para.bias,
-            "Bias_False": numeric_optics.para.bias,
+            "Bias_True": esop.numeric_optics.para.bias,
+            "Bias_False": esop.numeric_optics.para.bias,
             "Layer_Dense": self.layer_dense,
             "Network_Dense_Start": (lambda af, al, wf, wl, s, l: l),
             "Network_Dense_Cons": (lambda af, atl, al, wf, wtl, wl, m, n, s1, s2, s3, layer, model: layer >> model),

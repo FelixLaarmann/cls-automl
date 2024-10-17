@@ -9,13 +9,7 @@ from synthesis.linear_repository import Linear_Repository
 import torch 
 import torch.nn as nn 
 
-from experiments.dataset import load_iris
-
-import numeric_optics.lens as lens
-from numeric_optics.para import Para, to_para, dense, linear
-from numeric_optics.supervised import train_supervised, supervised_step, mse_loss, learning_rate
-from numeric_optics.update import gd, rda
-from numeric_optics.statistics import accuracy
+from esop.experiments.dataset import load_iris
 
 from clsp import (
     DSL,
@@ -89,7 +83,7 @@ def main(iris_data) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--iris-data', default='data/iris.csv')
+    parser.add_argument('--iris-data', default='../data/iris.csv')
     #parser.add_argument('model', choices=['linear', 'dense', 'hidden'])
     args = parser.parse_args()
     main(args.iris_data)

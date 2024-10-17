@@ -6,13 +6,10 @@ import numpy as np
 import argparse
 from synthesis.linear_repository import Linear_Repository
 
-from experiments.dataset import load_iris
+from esop.experiments.dataset import load_iris
 
-import numeric_optics.lens as lens
-from numeric_optics.para import Para, to_para, dense, linear
-from numeric_optics.supervised import train_supervised, supervised_step, mse_loss, learning_rate
-from numeric_optics.update import gd, rda
-from numeric_optics.statistics import accuracy
+from esop.numeric_optics.supervised import train_supervised, supervised_step, mse_loss, learning_rate
+from esop.numeric_optics.statistics import accuracy
 
 from clsp import (
     DSL,
