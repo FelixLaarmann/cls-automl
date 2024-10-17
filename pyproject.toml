@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "cls-automl"
+version = "0.1.0"
+description = ""
+authors = ["Felix Laarmann <felix.laarmann@udo.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.13 "
+numpy = ">=1.23.5,<2.0.0"
+scipy = "^1.14.1"
+pandas = "^2.2.3"
+mnist = "^0.2.2"
+keras = ">=2.10.0"
+loguru = "^0.7"
+
+clsp = {git = "https://github.com/tudo-seal/clsp-python"}
+
+nas_benchmarks = {git = "https://github.com/automl/nas_benchmarks"}
+
+tensorflow-macos = {version = ">=2.16.2", optional = true}
+tensorflow-metal = {version = ">=0.7.0", optional = true}
+tensorflow = {version = ">=2.4.0", optional = true}
+
+h5py = "^3.12.1"
+configspace = "^1.2.0"
+torch = ">=2.2"
+torchvision = ">=0.15"
+
+[tool.poetry.extras]
+tensorflow-x64 = ["tensorflow"]
+tensorflow-m1 = ["tensorflow-macos", "tensorflow-metal"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
